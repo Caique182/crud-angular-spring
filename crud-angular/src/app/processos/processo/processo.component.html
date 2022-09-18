@@ -1,0 +1,67 @@
+<mat-card>
+
+  <mat-toolbar color="primaty"> Todos Processos</mat-toolbar>
+
+  <div *ngIf="processos$ | async as processos; else loading">
+    <table mat-table [dataSource]="processos" class="mat-elevation-z8">
+
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> Id </th>
+        <td mat-cell *matCellDef="let element"> {{element.id }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="numero">
+        <th mat-header-cell *matHeaderCellDef> Numero </th>
+        <td mat-cell *matCellDef="let element"> {{element.numero }} </td>
+      </ng-container>
+
+
+      <ng-container matColumnDef="ano">
+        <th mat-header-cell *matHeaderCellDef> Ano </th>
+        <td mat-cell *matCellDef="let element"> {{element.ano }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="dataCadastro">
+        <th mat-header-cell *matHeaderCellDef> DataCadastro </th>
+        <td mat-cell *matCellDef="let element"> {{element.dataCadastro }} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="pessoa">
+        <th mat-header-cell *matHeaderCellDef> Pessoa </th>
+        <td mat-cell *matCellDef="let element"> {{element.pessoa.nome}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <mat-header-cell *matHeaderCellDef>
+          <button mat-mini-fab color="accent" aria-label="Adicionar um processo">
+            <mat-icon (click)="onAdd()">add</mat-icon>
+          </button>
+        </mat-header-cell>
+
+        <mat-cell *matCellDef="lef course">
+          <button mat-mini-fab color="primaty" aria-label="Editar um processo">
+            <mat-icon>edit</mat-icon>
+          </button>
+
+          <button mat-mini-fab color="primaty" aria-label="Remover o processo">
+            <mat-icon>delete</mat-icon>
+          </button>
+
+        </mat-cell>
+
+
+
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+
+  <ng-template #loading>
+    <div class="loading-spinner">
+      <mat-spinner></mat-spinner>
+    </div>
+  </ng-template>
+
+</mat-card>

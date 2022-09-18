@@ -1,0 +1,14 @@
+//angular material v11 which uses @import syntax
+@import '~@angular/material/theming';//notice that the file imported is also different
+@include mat-core();
+
+$custom-app-primary: mat-palette($mat-blue); //notice that functions not Namespaced
+$custom-app-secundary:  mat-palette($mat-indigo, A200, A100, A400);
+$custom-app-warn: mat-palette($mat-red);
+
+$custom-theme: mat-dark-theme($custom-app-primary, $custom-app-secundary, $custom-app-warn);
+
+@include angular-material-theme($custom-theme);
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

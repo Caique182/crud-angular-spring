@@ -1,0 +1,24 @@
+<mat-card>
+
+  <mat-toolbar color="secundary">Detalhes do Cadastro</mat-toolbar>
+
+  <mat-card-content>
+    <form>
+
+      <mat-form-field>
+        <input matInput placeholder="numero" formControlName="name">
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="ano" formControlName="ano">
+      </mat-form-field>
+
+    </form>
+  </mat-card-content>
+
+  <mat-card-actions align="end">
+    <button mat-button (click)="onSubmit()">Salvar</button>
+    <button mat-button (click)="onCancel()">Cancelar</button>
+  </mat-card-actions>
+
+</mat-card>
