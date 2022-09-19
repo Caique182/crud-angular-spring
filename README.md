@@ -1,7 +1,7 @@
 # crud-angular-spring
  Cadastro de Processos
  
- Optei por nãu utilizar o jhipster e pegar tudo pronto esse foi meu erro.
+ Optei por não utilizar o jhipster e pegar tudo pronto esse foi meu erro.
  
  Para rodar o projeto basta fazer o download e abrir as 2 pastas [crud-angular,Processos] em projetos diferentes.
  
